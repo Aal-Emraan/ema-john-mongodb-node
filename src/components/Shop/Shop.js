@@ -25,7 +25,7 @@ const Shop = () => {
                 const pageNumber = Math.ceil(count / size);
                 setPageCount(pageNumber);
             });
-    }, []);
+    }, [page]);
 
 
 
@@ -79,7 +79,7 @@ const Shop = () => {
                         key={number}
                         className={page === number ? "selected" : ""}
                         onClick={() => setPage(number)}
-                        >{number}</button>)
+                        >{number+1}</button>)
                     }
                     </div>
                 </div>
