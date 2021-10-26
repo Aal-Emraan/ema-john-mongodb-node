@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
-    const [cart, setCart] = useCart(products);
+    const [cart, setCart] = useCart();
     const [pageCount, setPageCount] = useState(0);
     const [page, setPage] = useState(0);
     // products to be rendered on the UI
@@ -21,6 +21,7 @@ const Shop = () => {
             .then(data => {
                 setProducts(data.products);
                 setDisplayProducts(data.products);
+                // console.log(data.products)
                 const count = data.count;
                 const pageNumber = Math.ceil(count / size);
                 setPageCount(pageNumber);
